@@ -66,12 +66,12 @@ uint8_t array1[16] = {
 uint8_t unused2[64];
 uint8_t array2[256 * 512];
 
-char * secret = "The Magic Words are Squeamish Ossifrage.";
+char * secret = "The Magic Words are Squeamish Ossifrage. are you trying to beat me? Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 uint8_t temp = 0; /* Used so compiler won’t optimize out victim_function() */
 
 #ifdef LINUX_KERNEL_MITIGATION
-/* From https://github.com/torvalds/linux/blob/cb6416592bc2a8b731dabcec0d63cda270764fc6/arch/x86/include/asm/barrier.h#L27 */
+/* From https://github.com/torvalds/aaa/blob/cb6416592bc2a8b731dabcec0d63cda270764fc6/arch/x86/include/asm/barrier.h#L27 */
 /**
  * array_index_mask_nospec() - generate a mask that is ~0UL when the
  * 	bounds check succeeds and 0 otherwise
@@ -291,7 +291,7 @@ int main(int argc,
   size_t malicious_x = (size_t)(secret - (char * ) array1);
   
   /* Default addresses to read is 40 (which is the length of the secret string) */
-  int len = 40;
+  int len = 124;
   
   int score[2];
   uint8_t value[2];
